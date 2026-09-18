@@ -62,14 +62,14 @@ function draw() {
   // day and night cycle switch
   if (isDay == true) {
     background('skyblue');
-    sunColor = "yellow";
-    mountainColor = "grey";
+    sunColor = "#eacb19";
+    mountainColor = "#6b6b6b";
     roadColor = "#919191"
-    whiteColor = "white";
-    treeColor = "brown";
-    leafColor = "green";
+    whiteColor = "#a5a5a4";
+    treeColor = "#3c3610";
+    leafColor = "#2d8939";
     cloudColor = "white";
-    tireColor = "black";
+    tireColor = "black";  
   } else {
     background('#111111');
     sunColor = "grey";
@@ -112,11 +112,9 @@ function draw() {
 
   if (cloud1PosX >= 950) {
     cloud1PosX = -75;
-  } 
-  if (cloud2PosX >= 950) {
+  } else if (cloud2PosX >= 950) {
     cloud2PosX = -20;
-  }
-  if (cloud3PosX >= 950) {
+  } else if (cloud3PosX >= 950) {
     cloud3PosX = -20;
   }
 
@@ -207,14 +205,10 @@ function draw() {
   if (lightVar == 1) {
     lightColor = 'green';
     lightPosY = 475;
-  }
-
-  if (lightVar == 2) {
+  } else if (lightVar == 2) {
     lightColor = 'orange';
     lightPosY = 440;
-  }
-
-  if (lightVar == 3) {
+  } else {
     lightColor = 'red';
     lightPosY = 405;
   }
@@ -259,11 +253,11 @@ function draw() {
   if (shouldStop == true) {
     if (car1PosX >= stopX) {
       car1PosX += 0;
-    } if (car2PosX == stopX) {
+    } else if (car2PosX >= stopX) {
       car2PosX += 0;
-    } if (car1PosX != stopX) {
+    } else if (car1PosX != stopX) {
       car1PosX += 1;
-    } if (car2PosX != stopX) {
+    } else if (car2PosX != stopX) {
       car2PosX += 0.5;
     }
   }
@@ -283,14 +277,10 @@ function draw() {
   if (lightVar == 3) {
     shouldStop = true;
     couldStop = false;
-  }
-
-  if (lightVar == 2) {
+  } else if (lightVar == 2) {
     couldStop = true;
     shouldStop = false;
-  }
-
-  if (lightVar == 1) {
+  } else if (lightVar == 1)  {
     shouldStop = false;
     couldStop = false;
   }
